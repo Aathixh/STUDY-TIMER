@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    this is dashboard
+    this is dashboardhfodsfhsdhfkjhfskjfhsjdhfksdjhsdkfjhsdjhkfksdj
 @endsection

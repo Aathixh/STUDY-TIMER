@@ -2,7 +2,7 @@ html{
     background-color: gray;
 }
 .menu {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
@@ -37,4 +37,9 @@ html{
     margin-top: 10%;
     display: block;
     text-align: center;
+}
+.content{
+    position: relative;
+    margin-left: 15%;
+    width: 85%;
 }
