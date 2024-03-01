@@ -23,6 +23,18 @@
             <button type='submit'>Submit</button>
         </form>
 
+        <table border="1">
+            <tr>
+                <th>No</th>
+                <th>Tasks</th>
+            </tr>
+        @foreach($task as $key => $data)
+            <tr>
+                <td>{{$key + 1}}</td>
+                <td>{{$data->tasks}}</td>
+            </tr>
+        @endforeach
+</table>
     </body>
     </html>
 @endsection

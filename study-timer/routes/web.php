@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Tasks;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TaskController;
@@ -40,3 +41,4 @@ Route::get('/show-todo', function (Request $request) {
 })->name('show-todo');
 
 Route::post('/todo', [TaskController::class, 'list'])->name('todolist');
+
