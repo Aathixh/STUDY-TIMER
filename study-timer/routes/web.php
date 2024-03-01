@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::view("index", 'home.index');
-Route::view("clock", 'home.clock.clock');
+Route::view("app", 'home.webapp');
