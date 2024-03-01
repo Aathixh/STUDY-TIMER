@@ -7,5 +7,7 @@
 </head>
 <body>
     <H1>Welcome to home page</H1>
+    <a href="/signup"><button>Register</button></a>
+    <a href="/login"><button>Login</button></a>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::view("index", 'home.index');
-Route::view("app", 'home.webapp');
+<<<<<<< Updated upstream
+Route::view("clock", 'home.clock.clock');
+=======
+Route::view("/login", 'home.login');
+Route::get('/signup', [HomeController::class, 'index'])->name('home.register');
+
+Route::post('/signup', [HomeController::class, 'register'])->name('signup');
+
+Route::post('/authenticate', [HomeController::class, 'authenticate']);
+>>>>>>> Stashed changes
