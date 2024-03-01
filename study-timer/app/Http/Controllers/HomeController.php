@@ -12,7 +12,7 @@ class HomeController extends Controller
     //
     public function index()
     {
-        return view('home.register');
+        return view('home.login');
     }
     public function dash()
     {
@@ -48,10 +48,10 @@ class HomeController extends Controller
                 'email' => $request->input('email'),
                 'password' => Hash::make($request->input('password')),
             ]);
-            return redirect('/login');
+            return redirect()->route('login');
         } catch (\Exception $e) {
             // return back()->withErrors(['Invalid credentials!']);
-            return redirect()->route('signup')->withErrors(['Invalid credentials!']);
+            return redirect()->route('/login')->withErrors(['Invalid credentials!']);
         }
     }
 }
