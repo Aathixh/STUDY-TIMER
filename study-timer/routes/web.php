@@ -32,3 +32,5 @@ Route::get('/todo', [TaskController::class, 'D_todo'])->name('display_todo');
 
 Route::post('/todo', [TaskController::class, 'list'])->name('todolist');
 Route::get('/todo', [TaskController::class, 'display']);
+
+Route::delete('/tasks/{task}/destroy', [TaskController::class, 'destroy'])->name('tasks.destroy');

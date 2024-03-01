@@ -48,4 +48,10 @@ class TaskController extends Controller
         $Task = Tasks::all();
         return view('layouts.todo', ['tasks' => $Task]);
     }
+
+    public function destroy(Tasks $task)
+    {
+        $task->delete();
+        return back()->with('success', 'Task Deleted');
+    }
 }
