@@ -27,14 +27,22 @@
             <tr>
                 <th>No</th>
                 <th>Tasks</th>
+                <th><th>
             </tr>
             
-        @foreach($tasks as $key => $data)
-            <tr>
-                <td>{{$key + 1}}</td>
-                <td>{{$data->tasks}}</td>
-            </tr>
-        @endforeach
+            @foreach($tasks as $key => $data)
+    <tr>
+        <td>{{ $key + 1 }}</td>
+        <td>{{ $data->tasks }}</td>
+        <td>
+            <form action="{{ route('tasks.destroy', ['task' => $data->id]) }}" method="post">
+                @csrf
+                @method('delete')
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+@endforeach
 </table>
     </body>
     </html>
