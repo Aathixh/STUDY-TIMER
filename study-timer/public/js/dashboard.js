@@ -1,14 +1,6 @@
 var alarmSound = new Audio('/sounds/alarm.mp3');
 var timer2 = 0;
 var timer2Interval;
-var score = 0;
-var scoreDisplay = document.querySelector('.scoreDisplay');
-// Load score from cookie
-var scoreCookie = document.cookie.split('; ').find(row => row.startsWith('score='));
-if (scoreCookie) {
-    score = parseInt(scoreCookie.split('=')[1]);
-    scoreDisplay.textContent = "Score: " + score;
-}
 document.getElementById('startTimer').addEventListener('click', function() {
     var inputHours = document.getElementById('inputHours').value;
     var inputMinutes = document.getElementById('inputMinutes').value;
@@ -25,12 +17,6 @@ document.getElementById('startTimer').addEventListener('click', function() {
         var seconds = timer2 % 60;
         display2.textContent = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
     }, 1000);
-    // Start score increment
-    setInterval(function() {
-        score += 5;
-        document.cookie = "score=" + score;
-        scoreDisplay.textContent = "Score: " + score; // Save score in cookie
-    }, 60000); // 60000 milliseconds = 1 minute
 });
 document.getElementById('stopTimer2').addEventListener('click', function() {
     clearInterval(timer2Interval); // Stop timer2
