@@ -26,7 +26,7 @@ Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
 Route::post('/logout', [HomeController::class, 'postLogout']);
 
 Route::post('/authenticate', [HomeController::class, 'authenticate']);
-Route::get('/dashboard', [HomeController::class, 'dash'])->name('home.dash')->middleware('auth');
+Route::get('/dashboard', [HomeController::class, 'dash'])->name('home.dash');
 
 Route::get('/todo', [TaskController::class, 'D_todo'])->name('display_todo');
 

@@ -15,6 +15,7 @@
                 <h3>STUDY TIMER</h3>
             </div>
             <div class="menu-items">
+            @if(Auth::check())    
                 <a href="/dashboard" class="btn btn-primary">
                     <span>Dashboard</span>
                 </a>
@@ -26,12 +27,27 @@
                 <a href="/scoreboard" class="btn btn-primary">
                     <span>Scoreboard</span>
                 </a>
+            @else
+            <a href="/dashboard" class="btn btn-primary">
+                    <span>Dashboard</span>
+                </a>
+            <br>
+            <span class="btn btn-primary">To-Do<br>(Login to USE)</span>
+            <br>
+            <span class="btn btn-primary">Scoreboard<br>(Login to USE)</span>
+            @endif
             </div>
             </div>
             <div class="user-card">
                 <div class="user-info">
-                    <p style="margin-bottom: 0">{{ Auth::user()->name }}</p>
-                    <p style="color: rgb(63, 63, 63); text-align:right; font-size:10px">
+                    <p style="margin-bottom: 0">
+                    @if(Auth::check())
+                        {{ Auth::user()->name }}
+                    @else
+                        Guest
+                    @endif
+                    </p>
+                    <p style="color: rgb(63, 63, 63); text-align:center; font-size:10px">
                         @if(Auth::check())
                             Your personal ID: {{ Auth::user()->id }}
                         @else
@@ -39,10 +55,14 @@
                         @endif
                     </p>
                 </div>
+                @if(Auth::check())
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
                         <button type="submit">Logout</button>
                     </form>
+                @else
+                    <a class="signin-btn" href="/login">Signup</a>
+                @endif
             </div>
         </div>
         <div class="content">

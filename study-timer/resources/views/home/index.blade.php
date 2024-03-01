@@ -11,7 +11,8 @@
     <div class="overlay">
         <h1>FOCUS MINDER</h1>
         <p>Success is the sum of small efforts, repeated day in and day out</p>
-        <a href="/login"><button>Explore</button></a>
+        <a href="/dashboard"><button>Explore</button></a>
+        <a href="/login"><button>Login</button></a>
     </div>
     <!-- <a href="/login"><button>Login</button></a> -->
 </body

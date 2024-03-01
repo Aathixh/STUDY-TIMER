@@ -58,6 +58,7 @@
 }
 .user-card{
     margin-left: auto;
+    min-width: 70%;
     margin-right: auto;
     margin-bottom: 5%;
     text-align: center;
@@ -74,7 +75,7 @@
     padding-bottom: 5%;
     border-radius: 10px;
 }
-.user-card > form > button:hover{
+ .user-card > form > button:hover{
     background-color: rgb(213, 214, 223);
     cursor: pointer;
     border: none;
@@ -85,3 +86,26 @@
     padding-bottom: 5%;
     border-radius: 10px;
 }
+.signin-btn {
+    background-color: rgb(27, 29, 47);
+    border: none;
+    color: white;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.signin-btn:hover{
+    background-color: rgb(213, 214, 223);
+    cursor: pointer;
+    border: none;
+    color: rgb(84, 76, 76);
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-radius: 10px;
+} 
+

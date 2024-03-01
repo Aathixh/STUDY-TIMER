@@ -8,31 +8,35 @@ img {
 
 .overlay {
     position: absolute;
-    top: 40%;
-    right: 10%; /* Adjust as necessary */
+    top: 30%;
+    right: 15%; /* Adjust as necessary */
 }
 
 .overlay h1 {
-    font-size: 3em; /* Adjust font size as needed */
+    font-size: 4em; /* Adjust font size as needed */
     margin-bottom: 10px;
+    text-align: center;
     /* margin-left: 0; Add spacing below the heading */
+    margin-left: 50px;
 }
 
 .overlay p {
     font-size: 1.2em; /* Adjust font size as needed */
-    text-align: right; /* Align text to the right */
+    text-align: center; /* Align text to the right */
+    margin-left: 50px;
 }
-
 button {
     background-color: black;
     color: white;
     border: none;
-    width: 271px;
+    width: 250px;
     height: 68px;
     padding: 10px 20px;
-    margin-left: 80px;
     margin-top: 50px;
     border-radius: 20px;
     font-size: 1em;
     cursor: pointer;
+}
+a{
+    margin-left: 50px;
 }
