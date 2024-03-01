@@ -39,4 +39,9 @@ class TaskController extends Controller
         }
     }
 
+    public function display()
+    {
+        $Task = Tasks::all();
+        return view('layouts.todo', ['tasks' => $Task]);
+    }
 }

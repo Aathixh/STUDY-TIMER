@@ -14,5 +14,5 @@
         <a href="/login"><button>Explore</button></a>
     </div>
     <!-- <a href="/login"><button>Login</button></a> -->
-</body>
+</body
 </html>
