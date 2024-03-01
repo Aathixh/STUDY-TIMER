@@ -50,3 +50,27 @@ function startTimer(duration, display) {
         }
     }, 1000);
 }
+var currentTimeDisplay = document.getElementById('currentTime');
+setInterval(function() {
+    var now = new Date();
+    var day = now.getDate();
+    var month = now.getMonth() + 1; // January is 0!
+    var year = now.getFullYear();
+
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+
+    // add a zero in front of numbers<10
+    day = day < 10 ? '0' + day : day;
+    month = month < 10 ? '0' + month : month;
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    currentTimeDisplay.textContent = day + '/' + month + '/' + year + ' || ' + hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+}, 1000);

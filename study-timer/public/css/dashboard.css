@@ -10,7 +10,7 @@
       'timer timer timer';
     gap: 10px;
     padding: 10px;
-    height: 89%;
+    height: 80vh;
 } 
 .grid-container > div {
     background-color: rgb(255, 255, 255);
@@ -20,46 +20,46 @@
     border-radius: 10px;
     border: solid 3px rgb(34, 34, 34);
 }
-#clockContainer {
-    position: relative;
-    margin: auto;
-    height: 20vh;
-    /*to make the height and width responsive*/
-    width: 20vw;
-    background: url(clock.png) no-repeat;
-    /*setting our background image*/
-    background-size: 100%;
-}
- 
-#hour,
-#minute,
-#second {
-    position: absolute;
-    background: black;
+#stopTimer2{
+    background-color: rgb(129, 129, 129);
+    color: rgb(255, 255, 255);
     border-radius: 10px;
-    transform-origin: bottom;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
- 
-#hour {
-    width: 1.8%;
-    height: 25%;
-    top: 25%;
-    left: 48.85%;
-    opacity: 0.8;
+#stopTimer2:hover{
+    background-color: red;
 }
- 
-#minute {
-    width: 1.6%;
-    height: 30%;
-    top: 19%;
-    left: 48.9%;
-    opacity: 0.8;
+#timer{
+    margin-top: 4%;
+    margin-bottom: 4%;
+    /* margin-right: 13%; */
 }
- 
-#second {
-    width: 1%;
-    height: 40%;
-    top: 9%;
-    left: 49.25%;
-    opacity: 0.8;
+.item4 > input{
+    padding: 10px;
+    width: 20%;
+    font-size: 20px;
+    border-radius: 10px;
+    border: solid 3px rgb(34, 34, 34);
+    text-align: center;
+}
+.item4 > button{
+    background-color: green;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border: solid 3px rgb(34, 34, 34);
+    transition: background-color 0.3s ease;
+}
+.item4 > button:hover{
+    background-color: rgb(129, 129, 129);
+}
+hr{
+    max-width: 80%;
 }
