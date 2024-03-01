@@ -16,10 +16,9 @@ use Illuminate\Http\Request;
 
 
 Route::view("/", 'home.index');
-Route::view("/login", 'home.login');
-Route::get('/signup', [HomeController::class, 'index'])->name('home.register');
 
-Route::post('/signup', [HomeController::class, 'register'])->name('signup');
+Route::get('/login', [HomeController::class, 'index'])->name('login');
+Route::post('/register', [HomeController::class, 'register'])->name('signup');
 
 Route::post('/authenticate', [HomeController::class, 'authenticate']);
 Route::get('/dashboard', [HomeController::class, 'dash'])->name('home.dash')->middleware('auth');
