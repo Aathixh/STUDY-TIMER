@@ -1,44 +1,40 @@
-/* Blue header */
-header {
-    background-color: blue;
-    height: 50px;
-}
-
-/* Grey footer */
-footer {
-    background-color: grey;
-    height: 50px;
-}
-
-/* Vertical split */
-.app-container {
-    display: flex;
-    height: calc(100vh - 100px); /* Adjust the height based on your needs */
-}
-
-.menu {
-    width: 20%;
-    background-color: lightgrey;
-}
-
-.content {
-    width: 80%;
-    background-color: white;
-}
-.main-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px;
-    margin: auto;
-    background-color: aqua;
-}
-.main-row > div {
+html{
     background-color: gray;
-    margin: auto;
-    flex-grow: 1;
+}
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 15%;
+    background-color: white;
+    border-top-right-radius: 10px;
+    z-index: 999;
 }
 
-.active-content {
-    background-color: pink;
+@media (max-width: 400px) {
+    .menu {
+        top: 0;
+        bottom: auto;
+        width: 100%;
+        border-top-right-radius: 0;
+    }
+}
+.Website-Name {
+    text-align: center;
+    margin-top: 20%;
+    margin-bottom: 10px;
+}
+.menu-items {
+    margin-top: 20%;
+    text-decoration: none;
+    color: black;
+    display: block;
+    text-align: center;
+}
+.menu-items > a{
+    text-decoration: none;
+    margin-top: 10%;
+    display: block;
+    text-align: center;
 }
