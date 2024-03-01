@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Http\Request;
 
 /*
@@ -37,3 +38,5 @@ Route::get('/show-todo', function (Request $request) {
 
     return back();
 })->name('show-todo');
+
+Route::post('/todo', [TaskController::class, 'list'])->name('todolist');
