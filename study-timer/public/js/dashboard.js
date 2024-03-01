@@ -1,76 +1,73 @@
+let countdown; // holds countdown interval
+let cumulativeSeconds = 0; // holds cumulative time
+let cumulativeInterval; // holds cumulative interval
+
 var alarmSound = new Audio('/sounds/alarm.mp3');
-var timer2 = 0;
-var timer2Interval;
-document.getElementById('startTimer').addEventListener('click', function() {
-    var inputHours = document.getElementById('inputHours').value;
-    var inputMinutes = document.getElementById('inputMinutes').value;
-    var inputSeconds = document.getElementById('inputSeconds').value;
+function timer(seconds) {
+  const now = Date.now();
+  const then = now + seconds * 1000;
 
-    var totalSeconds = (inputHours * 60 * 60) + (inputMinutes * 60) + (+inputSeconds);
-    var display = document.getElementById('timer');
-    startTimer(totalSeconds, display);
-    var display2 = document.getElementById('timer2');
-    timer2Interval = setInterval(function() {
-        timer2++;
-        var hours = Math.floor(timer2 / 3600);
-        var minutes = Math.floor((timer2 % 3600) / 60);
-        var seconds = timer2 % 60;
-        display2.textContent = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
-    }, 1000);
-});
-document.getElementById('stopTimer2').addEventListener('click', function() {
-    clearInterval(timer2Interval); // Stop timer2
-    timer2 = 0; // Reset timer2
-    document.getElementById('timer2').textContent = "00:00:00"; // Reset timer2 display
-});
-function startTimer(duration, display) {
-    var timer = duration, hours, minutes, seconds;
-    var countdown = setInterval(function () {
-        hours = parseInt(timer / 3600, 10);
-        minutes = parseInt((timer % 3600) / 60, 10);
-        seconds = parseInt(timer % 60, 10);
+  countdown = setInterval(() => {
+    const secondsLeft = Math.round((then - Date.now()) / 1000);
 
-        hours = hours < 10 ? "0" + hours : hours;
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = hours + ":" + minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            clearInterval(countdown);
-            clearInterval(timer2Interval)
-            var playCount = 0;
-            alarmSound.play();
+    // check if we should stop it
+    if(secondsLeft < 0) {
+      clearInterval(countdown);
+      clearInterval(cumulativeInterval);
+      alarmSound.play();
             alarmSound.onended = function() {
                 playCount++;
                 if (playCount < 3) {
                     alarmSound.play();
                 }
             };
-        }
-    }, 1000);
+      return;
+    }
+    const hours = Math.floor(secondsLeft / 3600).toString().padStart(2, '0');
+    const minutes = Math.floor((secondsLeft % 3600) / 60).toString().padStart(2, '0');
+    const seconds = (secondsLeft % 60).toString().padStart(2, '0');
+    // display it
+    document.getElementById('timer').textContent = `${hours}:${minutes}:${seconds}`;
+  }, 1000);
+
+  cumulativeInterval = setInterval(() => {
+    cumulativeSeconds++;
+    const hours = Math.floor(cumulativeSeconds / 3600).toString().padStart(2, '0');
+  const minutes = Math.floor((cumulativeSeconds % 3600) / 60).toString().padStart(2, '0');
+  const seconds = (cumulativeSeconds % 60).toString().padStart(2, '0');
+
+    document.getElementById('timer2').textContent = `${hours}:${minutes}:${seconds}`;
+  }, 1000);
 }
-var currentTimeDisplay = document.getElementById('currentTime');
-setInterval(function() {
-    var now = new Date();
-    var day = now.getDate();
-    var month = now.getMonth() + 1; // January is 0!
-    var year = now.getFullYear();
 
-    var hours = now.getHours();
-    var minutes = now.getMinutes();
-    var seconds = now.getSeconds();
+// start timer on button click
+document.getElementById('startTimer').addEventListener('click', () => {
+  const hours = document.getElementById('inputHours').value;
+  const minutes = document.getElementById('inputMinutes').value;
+  const seconds = document.getElementById('inputSeconds').value;
 
-    var ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
+  const totalSeconds = (hours * 60 * 60) + (minutes * 60) + seconds;
+  timer(totalSeconds);
+});
 
-    // add a zero in front of numbers<10
-    day = day < 10 ? '0' + day : day;
-    month = month < 10 ? '0' + month : month;
-    hours = hours < 10 ? '0' + hours : hours;
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    seconds = seconds < 10 ? '0' + seconds : seconds;
+// stop timer on button click
+document.getElementById('stopTimer').addEventListener('click', () => {
+    clearInterval(countdown);
+    clearInterval(cumulativeInterval);
+    document.getElementById('timer').textContent = '00:00:00';
+});
 
-    currentTimeDisplay.textContent = day + '/' + month + '/' + year + ' || ' + hours + ':' + minutes + ':' + seconds + ' ' + ampm;
-}, 1000);
+function displayCurrentTime() {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const strTime = `${hours % 12}:${minutes}:${seconds} ${ampm}`;
+  const strDate = `${now.getDate()}/${now.getMonth()+1}/${now.getFullYear()}`;
+
+  document.getElementById('currentTime').textContent = `${strTime} || ${strDate}`;
+}
+
+// update current time every second
+setInterval(displayCurrentTime, 1000);
