@@ -1,6 +1,7 @@
-html{
-    background-color: rgb(196, 196, 196);
-}
+
+    html {
+        background-image: url(/img/leaf.jpeg);
+    }
 .menu {
     position: absolute;
     top: 0;
@@ -23,7 +24,6 @@ html{
 .Website-Name {
     text-align: center;
     margin-top: 20%;
-    margin-bottom: 10px;
 }
 .menu-items {
     margin-top: 20%;
