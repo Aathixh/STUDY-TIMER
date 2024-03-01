@@ -14,13 +14,13 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::view("index", 'home.index');
+
+Route::view("/", 'home.index');
 Route::view("/login", 'home.login');
 Route::get('/signup', [HomeController::class, 'index'])->name('home.register');
 
 Route::post('/signup', [HomeController::class, 'register'])->name('signup');
 
 Route::post('/authenticate', [HomeController::class, 'authenticate']);
+Route::get('/dashboard', [HomeController::class, 'dash'])->name('home.dash')->middleware('auth');
+;

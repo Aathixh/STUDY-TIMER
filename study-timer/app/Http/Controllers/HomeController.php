@@ -14,6 +14,10 @@ class HomeController extends Controller
     {
         return view('home.register');
     }
+    public function dash()
+    {
+        return view('home.webapp');
+    }
     public function authenticate(Request $request)
     {
         $request->validate([
@@ -27,7 +31,7 @@ class HomeController extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             $newuser = User::where('email', $email)->first();
             Auth::login($newuser);
-            return redirect('/book');
+            return redirect('/dashboard');
         } else {
             return back()->withErrors(['Invalid credentials!']);
         }

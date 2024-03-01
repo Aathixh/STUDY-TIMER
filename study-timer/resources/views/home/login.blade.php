@@ -12,6 +12,15 @@
     <div style="width: 321px; height: 488px; left: 866px; top: 199px; position: absolute">
 
         <form action="/authenticate" method="post"> <!-- Form added -->
+        @csrf
+        @method('post')
+        @if ($errors->any())
+        <ul style="color: red;">
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+        @endif
             <div style="width: 305px; height: 50px; left: 1px; top: 113px; position: absolute">
                 <!-- Email input -->
                 <input type="email" id="emailInput" name="email" style="width: 100%; height: 100%; border: 1px #AFAAAA solid; border-radius: 10px; padding: 0 10px; font-size: 14px; font-family: Inter;" placeholder="Enter Your email">
