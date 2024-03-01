@@ -54,4 +54,12 @@ class HomeController extends Controller
             return redirect()->route('/login')->withErrors(['Invalid credentials!']);
         }
     }
+
+    // In HomeController.php
+    public function postLogout()
+    {
+        Auth::logout();
+        return redirect('/');
+    }
+
 }

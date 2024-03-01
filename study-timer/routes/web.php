@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +20,8 @@ Route::view("/", 'home.index');
 
 Route::get('/login', [HomeController::class, 'index'])->name('login');
 Route::post('/register', [HomeController::class, 'register'])->name('signup');
+Route::get('/logout', [HomeController::class, 'logout'])->name('logout');
+Route::post('/logout', [HomeController::class, 'postLogout']);
 
 Route::post('/authenticate', [HomeController::class, 'authenticate']);
 Route::get('/dashboard', [HomeController::class, 'dash'])->name('home.dash')->middleware('auth');

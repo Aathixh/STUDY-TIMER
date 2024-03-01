@@ -26,7 +26,7 @@
             <div class="user-card">
                 <div class="user-info">
                     <p>{{ Auth::user()->name }}</p>
-                    {{-- <form action="{{ route('logout') }}" method="post"> --}}
+                    <form action="{{ route('logout') }}" method="post">
                         @csrf
                         <button type="submit" class="btn btn-primary">Logout</button>
                     </form>
