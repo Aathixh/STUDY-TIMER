@@ -16,7 +16,7 @@ class HomeController extends Controller
     }
     public function dash()
     {
-        return view('home.webapp');
+        return view('layouts.dashboard');
     }
     public function authenticate(Request $request)
     {

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('styles')
     <link rel="stylesheet" href="/css/dashboard.css">
+@endsection
 @section('content')
     <h1>Dashboard</h1>
     <div class="grid-container">

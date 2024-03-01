@@ -28,7 +28,8 @@
                 <th>No</th>
                 <th>Tasks</th>
             </tr>
-        @foreach($task as $key => $data)
+            
+        @foreach($tasks as $key => $data)
             <tr>
                 <td>{{$key + 1}}</td>
                 <td>{{$data->tasks}}</td>

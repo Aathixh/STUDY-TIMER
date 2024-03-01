@@ -28,17 +28,7 @@ Route::post('/logout', [HomeController::class, 'postLogout']);
 Route::post('/authenticate', [HomeController::class, 'authenticate']);
 Route::get('/dashboard', [HomeController::class, 'dash'])->name('home.dash')->middleware('auth');
 
-Route::get('/show-dashboard', function (Request $request) {
-    $request->session()->put('layout', 'dashboard');
-
-    return back();
-})->name('show-dashboard');
-
-Route::get('/show-todo', function (Request $request) {
-    $request->session()->put('layout', 'todo');
-
-    return back();
-})->name('show-todo');
+Route::get('/todo', [TaskController::class, 'D_todo'])->name('display_todo');
 
 Route::post('/todo', [TaskController::class, 'list'])->name('todolist');
-
+Route::get('/todo', [TaskController::class, 'display']);

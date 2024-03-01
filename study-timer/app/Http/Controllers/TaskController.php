@@ -38,6 +38,10 @@ class TaskController extends Controller
             return back()->withErrors(['Invalid credentials!']);
         }
     }
+    public function D_todo()
+    {
+        return view('layouts.todo');
+    }
 
     public function display()
     {
