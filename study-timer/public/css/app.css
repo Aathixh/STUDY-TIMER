@@ -11,17 +11,34 @@ footer {
 }
 
 /* Vertical split */
-.container {
+.app-container {
     display: flex;
     height: calc(100vh - 100px); /* Adjust the height based on your needs */
 }
 
 .menu {
-    width: 33.33%;
+    width: 20%;
     background-color: lightgrey;
 }
 
 .content {
-    width: 66.67%;
+    width: 80%;
     background-color: white;
+}
+.main-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
+    background-color: aqua;
+}
+.main-row > div {
+    background-color: gray;
+    margin: auto;
+    flex-grow: 1;
+}
+
+.active-content {
+    background-color: pink;
 }

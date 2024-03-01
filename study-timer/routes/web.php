@@ -18,9 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::view("index", 'home.index');
-
-Route::view("clock", 'home.clock.clock');
-
 Route::view("/login", 'home.login');
 Route::get('/signup', [HomeController::class, 'index'])->name('home.register');
 
