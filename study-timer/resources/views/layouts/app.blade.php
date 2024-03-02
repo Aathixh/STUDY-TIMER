@@ -24,7 +24,7 @@
                         <span>To-Do</span>
                 </a>
                 <br>
-                <a href="/scoreboard" class="btn btn-primary">
+                <a href="/score" class="btn btn-primary">
                     <span>Scoreboard</span>
                 </a>
             @else

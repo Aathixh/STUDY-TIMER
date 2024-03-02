@@ -43,14 +43,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-
-    /**
-     * Get the user's private key.
-     *
-     * @return string|null
-     */
-    public function getPrivateKeyAttribute()
-    {
-        return $this->attributes['id'];
-    }
 }
