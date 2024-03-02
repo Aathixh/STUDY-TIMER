@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ScoreController;
 use App\Models\Tasks;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -34,3 +35,8 @@ Route::post('/todo', [TaskController::class, 'list'])->name('todolist');
 Route::get('/todo', [TaskController::class, 'display']);
 
 Route::delete('/tasks/{task}/destroy', [TaskController::class, 'destroy'])->name('tasks.destroy');
+
+Route::get('/score', [ScoreController::class, 'score'])->name('display_score');
+Route::get('/score', [ScoreController::class, 'scoreboard']);
+
+Route::post('/update-score', [ScoreController::class, 'updateScore'])->name('update.score');
