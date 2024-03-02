@@ -5,11 +5,11 @@
 @section('content')
     <header class = "topbar">
         <h1 style="color: aliceblue; margin-left:1.5%">Dashboard</h1>
-        <div class="audio">
+
         <audio id="concentrationSound" controls autoplay>
             <source src="img/Colorful-Flowers(chosic.com).mp3" type="audio/mp3">
         </audio>
-        </div>t
+
     </header>
     <div class="grid-container">
         <div class="item1" style="display: flex; justify-content: center; align-items: center;">
