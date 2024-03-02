@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('styles')
+    <link rel="stylesheet" href="css/todo.css">
+@endsection
 @section('content')
     <!DOCTYPE html>
     <html lang="en">
@@ -22,7 +24,7 @@
                 <input type='text' name="tasks" placeholder='Enter the Task'>
             <button type='submit'>Submit</button>
         </form>
-
+        <br>
         <table border="1">
             <tr>
                 <th>No</th>
