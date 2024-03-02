@@ -3,15 +3,8 @@
     <link rel="stylesheet" href="css/todo.css">
 @endsection
 @section('content')
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <form method ='post' action="/todo"> 
+        
+        <form method ='post' action="/todo" class = "whole"> 
             @csrf
                 @method('post')
                 @if ($errors->any())
@@ -21,15 +14,16 @@
                     @endforeach
                 </ul>
                 @endif
-                <input type='text' name="tasks" placeholder='Enter the Task'>
-            <button type='submit'>Submit</button>
+                <input class="input-field" type='text' name="tasks" placeholder='Enter the Task'>
+                
+            <button class="red-button" type='submit'>Submit</button>
         </form>
-        <br>
-        <table border="1">
+        <!-- <div class ="container> -->
+        <table border="1" class = "striped-table">
             <tr>
                 <th>No</th>
                 <th>Tasks</th>
-                <th><th>
+                <th></th>
             </tr>
             
             @foreach($tasks as $key => $data)
@@ -40,12 +34,11 @@
             <form action="{{ route('tasks.destroy', ['task' => $data->id]) }}" method="post">
                 @csrf
                 @method('delete')
-                <button type="submit">Delete</button>
+                <button class = "button-10" type="submit">Delete</button>
             </form>
         </td>
     </tr>
 @endforeach
 </table>
-    </body>
-    </html>
+<!-- </div> -->
 @endsection

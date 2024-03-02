@@ -1,0 +1,108 @@
+
+.striped-table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 0%;
+}
+
+.striped-table th,
+.striped-table td {
+    padding: 8px;
+    text-align: left;
+}
+
+.striped-table th {
+    background-color: #f2f2f2; /* Light grey background for header */
+}
+
+.striped-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row color */
+}
+.striped-table tr:nth-child(odd) {
+    background-color: white;
+}
+
+.striped-table tr:hover {
+    background-color: #e3e3e3; /* Hover color */
+}
+
+.striped-table th,
+.striped-table td {
+    border: none; /* Remove cell borders */
+}
+/* button:hover{
+    background-color: red;
+    border: none;
+    border-radius:5px;
+} */
+table{
+    border-radius: 20px;
+}
+.button-10 {
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+     background-origin: border-box;
+    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  .button-10:focus {
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
+  }
+
+  .red-button {
+    /* display: flex; */
+    /* margin: 0px 0px 0px 160px; */
+    /* flex-direction: column;
+    align-items: center; */
+    cursor: pointer;
+    padding: 6px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    border: none;
+  
+    color: #fff;
+    background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+     background-origin: border-box;
+    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  
+  .input-field {
+    padding: 10px;
+    width: 100%;
+    margin-left: 50%;
+    border: 2px solid #3498db;
+    border-radius: 20px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .input-field:focus {
+    border-color: #2980b9; /* Change border color on focus */
+  }
+  .whole{
+    margin-top: 10%;
+    margin-bottom: 2%;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+
+
