@@ -19,21 +19,4 @@ class ScoreController extends Controller
         return view('layouts.scoreboard', ['User' => $users]);
     }
 
-    public function updateScore(Request $request)
-    {
-        $userId = $request->input('user_id');
-        $newScore = $request->input('score');
-
-        // Update the user's score in the database
-        $user = User::find($userId);
-        if ($user) {
-            $user->score = $newScore;
-            $user->save();
-
-            return redirect()->back()->with('success', 'Score updated successfully');
-        }
-
-        return redirect()->back()->with('error', 'User not found');
-    }
-
 }
