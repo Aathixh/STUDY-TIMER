@@ -22,9 +22,9 @@
         <div class="item3">Score<br><div id="scoreDisplay">0</div></div>
         <div class="item4">
             <div id="timer" style="font-size:5.5em">00:00:00</div>
-            <input type="number" id="inputHours" max="99" min="0" placeholder="Enter hours">
-            <input type="number" id="inputMinutes" max="60" min="0" placeholder="Enter minutes">
-            <input type="number" id="inputSeconds" max="60" min="0" placeholder="Enter seconds">
+            <input type="number" id="inputHours" max="99" min="0" placeholder="Enter hours" value="0">
+            <input type="number" id="inputMinutes" max="60" min="0" placeholder="Enter minutes" value="0">
+            <input type="number" id="inputSeconds" max="60" min="0" placeholder="Enter seconds" value="0">
             <button id="startTimer">Start Timer</button>
             <button id="stopTimer">Stop Timer</button>
             <hr><hr>
