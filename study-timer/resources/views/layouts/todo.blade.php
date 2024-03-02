@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('styles')
-<link rel = "stylesheet" href="css/todo.css">
+    <link rel="stylesheet" href="css/todo.css">
 @endsection
 @section('content')
         

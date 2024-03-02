@@ -3,8 +3,9 @@ let cumulativeSeconds = 0; // holds cumulative time
 let cumulativeInterval; // holds cumulative interval
 let timerIsActive = false; // flag for timer activity
 let hiddenTimestamp = null;
+let score = 0;
 function updateScore() {
-    const score = Math.floor(cumulativeSeconds / 60) * 5;
+    score = Math.floor(cumulativeSeconds / 60) * 5;
     document.getElementById('scoreDisplay').textContent = score;
   }
 var alarmSound = new Audio('/sounds/alarm.mp3');
@@ -87,7 +88,8 @@ document.addEventListener('visibilitychange', function() {
       // Tab is visible, calculate the difference
       const diffInSeconds = (Date.now() - hiddenTimestamp) / 1000;
       if (diffInSeconds > 10) {
-        cumulativeSeconds -= 10; // Subtract 10 seconds if the tab was hidden for more than 10 seconds
+        score-=10;
+        updateScore(); // Subtract 10 seconds if the tab was hidden for more than 10 seconds
       }
     }
   });
