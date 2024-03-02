@@ -38,5 +38,3 @@ Route::delete('/tasks/{task}/destroy', [TaskController::class, 'destroy'])->name
 
 Route::get('/score', [ScoreController::class, 'score'])->name('display_score');
 Route::get('/score', [ScoreController::class, 'scoreboard']);
-
-Route::post('/update-score', [ScoreController::class, 'updateScore'])->name('update.score');
