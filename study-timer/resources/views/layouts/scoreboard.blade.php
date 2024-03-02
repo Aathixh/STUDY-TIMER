@@ -1,6 +1,9 @@
 @extends('layouts.app')
+@section('styles')
+    <link rel='stylesheet' href='css/scoreboard.css'>
+@endsection
 @section('content')
-<table border="1" style="background-color: white;">
+<table>
             <tr>
                 <th>Rank</th>
                 <th>Name</th>
