@@ -51,7 +51,7 @@ class HomeController extends Controller
             return redirect()->route('login');
         } catch (\Exception $e) {
             // return back()->withErrors(['Invalid credentials!']);
-            return redirect()->route('/login')->withErrors(['Invalid credentials!']);
+            return back()->withErrors(['Invalid credentials!']);
         }
     }
 
