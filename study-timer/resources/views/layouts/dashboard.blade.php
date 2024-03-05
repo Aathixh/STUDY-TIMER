@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="item2">
-        <audio id="concentrationSound" controls autoplay>
+        <audio id="concentrationSound" controls >
             <source src="img/Colorful-Flowers(chosic.com).mp3" type="audio/mp3">
         </audio>
         </div>  

@@ -47,10 +47,10 @@ class HomeController extends Controller
                 'name' => $request->input('name'),
                 'email' => $request->input('email'),
                 'password' => Hash::make($request->input('password')),
+                'score' => 0,
             ]);
             return redirect()->route('login');
         } catch (\Exception $e) {
-            // return back()->withErrors(['Invalid credentials!']);
             return back()->withErrors(['Invalid credentials!']);
         }
     }
